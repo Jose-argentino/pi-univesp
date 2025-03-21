@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Trabalhe Conosco</title>
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-    
+    <div id="container">
+        <header>
+            <h1>Trabalhe Conosco</h1>
+            <p>Preencha o formulário abaixo e envie seu currículo.</p>
+        </header>
+        
+        <main>
+            <!-- Formulário para envio de informações -->
+            <form action="enviar.php" method="post" enctype="multipart/form-data">
+                <!-- Campo para o nome completo -->
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" required>
+                
+                <!-- Campo para o e-mail -->
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <!-- Campo para o telefone -->
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone">
+                
+                <!-- Campo para o envio do currículo -->
+                <label for="curriculo">Anexe seu currículo (PDF):</label>
+                <input type="file" id="curriculo" name="curriculo" accept=".pdf" required>
+                
+                <!-- Campo para uma mensagem adicional -->
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+                
+                <!-- Botão de envio -->
+                <button type="submit">Enviar</button>
+            </form>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+        </footer>
+    </div>
 </body>
 </html>
