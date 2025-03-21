@@ -1,6 +1,7 @@
 body{
     background-color: var(--background-color-1);
 }
+
 #container{
     background-color: var(--background-color-3);
     width: 50%;
@@ -8,17 +9,20 @@ body{
 
 /* Estilização básica para melhor apresentação */
 h1{
-    color:var(--cor-fonte-2);
+    color:var(--cor-fonte-4);
 }
+
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
 input, textarea {
     width: 100%;
     padding: 8px;
 }
+
 button {
     background-color: #5cb85c;
     color: white;
@@ -26,6 +30,7 @@ button {
     border: none;
     cursor: pointer;
 }
+
 button:hover {
     background-color: #4cae4c;
 }
