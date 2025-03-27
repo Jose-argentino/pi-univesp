@@ -4,12 +4,24 @@ body{
 
 #container{
     background-color: var(--background-color-3);
-    width: 50%;
+    /* width: 50%; */
 }
 
-/* Estilização básica para melhor apresentação */
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 h1{
-    color:var(--cor-fonte-4);
+    color:var(--cor-fonte-2);
+    font-size: 2.3rem;
+}
+
+#headerMensagem{
+    color: var(--cor-fonte-1);
+    font-size: 1.5rem;
 }
 
 form {
