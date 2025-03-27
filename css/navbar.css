@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#primeiro{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#segundo{
+    display: flex;
+    justify-content: space-between;
+}
