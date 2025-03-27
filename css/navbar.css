@@ -1,3 +1,15 @@
+/* retirar ao final */
+body{
+    background-color: var(--background-color-3);
+}
+.navbar{
+    background-color: var(--background-color-2);
+}
+#segundo{
+background-color: red;
+}
+
+/* Vai ficar  */
 .navbar{
     display: flex;
     flex-direction: column;
@@ -11,7 +23,47 @@
     align-items: center;
 }
 
+#navbarLogo{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbarLogo img{
+    border-radius: var(--radius);
+}
+
+#nomeFrase{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
 #segundo{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    padding: 5px;
+    width: 100%;
+}
+
+a{
+    list-style: none;
+}
+
+.navbarButton {
+    background-color: var(--background-color-1);
+    color: var(--cor-fonte-1);
+    border-radius: 15px;
+    border: solid var(--cor-borda) var(--espessura-da-borda);
+    margin: 0 auto;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.navbarButton:hover {
+    background-color: var(--background-color-5);
 }
