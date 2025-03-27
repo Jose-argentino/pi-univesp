@@ -4,8 +4,9 @@ body{
 
 #container{
     background-color: var(--background-color-3);
-    width: 100vh;
     max-width: 1200px;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
@@ -15,9 +16,9 @@ header{
     align-items: center;
 }
 
-h1{
+#headerTitulo{
     color:var(--cor-fonte-2);
-    font-size: 2.3rem;
+    font-size: 3.5rem;
     font-weight: bold;
     font-style: normal;
     text-transform: uppercase;
@@ -26,7 +27,8 @@ h1{
 
 #headerMensagem{
     color: var(--cor-fonte-1);
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 500;
     margin-bottom: 5vh;
 }
 
@@ -36,19 +38,43 @@ form {
     gap: 10px;
 }
 
-input, textarea {
-    width: 100%;
-    padding: 8px;
+.campos{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.campos label{
+    font-size: 2rem;
+    font-weight: 500;
+    font-style: italic;
+    margin-left: 20px;
+}
+
+.campos input, .campos textarea{
+    background: var(--background-color-2);
+    border-radius: 15px;
+    border: solid var(--cor-borda) var(--espessura-da-borda);
 }
 
 button {
-    background-color: #5cb85c;
-    color: white;
-    padding: 10px;
-    border: none;
+    background-color: var(--background-color-1);
+    color: var(--cor-fonte-1);
+    border-radius: 15px;
+    border: solid var(--cor-borda) var(--espessura-da-borda);
+    margin: 0 auto;
+    padding: 10px 15px;
+    width: 40%;
+    /* border: none; */
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: var(--background-color-5);
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 0 0;
 }
