@@ -4,7 +4,8 @@ body{
 
 #container{
     background-color: var(--background-color-3);
-    /* width: 50%; */
+    width: 100vh;
+    max-width: 1200px;
 }
 
 header{
@@ -17,11 +18,16 @@ header{
 h1{
     color:var(--cor-fonte-2);
     font-size: 2.3rem;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+
 }
 
 #headerMensagem{
     color: var(--cor-fonte-1);
     font-size: 1.5rem;
+    margin-bottom: 5vh;
 }
 
 form {
