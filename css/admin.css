@@ -3,7 +3,7 @@ body{
 }
 
 #container{
-    background-color: var(--background-color-3);
+    background-color: var(--background-color-5);
     max-width: 1200px;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@ header{
 }
 
 #headerMensagem{
-    color: var(--cor-fonte-1);
+    color: var(--cor-fonte-5);
     font-size: 2.5rem;
     font-weight: 500;
     margin-bottom: 15px;
@@ -40,26 +40,30 @@ main{
 }
 
 table {
-    width: 90%;
-    border-collapse: collapse;
+    max-width: 100%;
+    border-collapse: collapse;    
 }
 
 thead{
-    color: var(--cor-fonte-1);
+    color: var(--cor-fonte-5);
     text-transform: uppercase;
 }
+
 th, td {
     border: var(--cor-borda) solid var(--espessura-da-borda);
     padding: 10px;
     text-align: left;
+    color: var(--cor-fonte-5);
 }
 
 th {
-    background-color: var(--background-color-2);
+    background-color: var(--background-color-5);
+    text-align: center;
 }
 
 footer{
     display: flex;
     justify-content: center;
     margin: 10px 0 0 0;
+    color: var(--cor-fonte-5);
 }
