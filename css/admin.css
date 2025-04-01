@@ -41,7 +41,11 @@ main{
 
 table {
     max-width: 100%;
-    border-collapse: collapse;    
+    border-collapse: collapse; 
+    white-space: pre-wrap;   
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
 
 thead{

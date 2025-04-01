@@ -62,7 +62,6 @@
                 <!-- Campo para CNH -->
                 <div class="camposSelecione">
                     <label>Possui carteira de motorista?</label>
-<br>
                     <div class="opcoes-cnh">
                         <input type="radio" id="cnh_nao" name="cnh" value="nao" required>
                         <label for="cnh_nao">Não</label>
@@ -151,20 +150,72 @@
                     </div>
                 </div>
 <br>                
+                <!-- Campo para horas extras -->
+                <div class="camposSelecione">
+                    <label>Você aceita fazer horas extras:</label>
+                    <div class="opcoesHoras">
+                        <div>
+                            <input type="radio" id="horas_sim" name="horas" value="sim">
+                            <label for="horas_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="horas_nao" name="horas" value="não">
+                            <label for="horas_nao">Não</label>
+                        </div>
+                    </div>
+                </div>
+<br>                
+
+                <!-- Campo para sábado -->
+                <div class="camposSelecione">
+                    <label>Você aceita trabalhar de sábado:</label>
+                    <div class="opcoesSabado">
+                        <div>
+                            <input type="radio" id="sabado_sim" name="sabado" value="sim">
+                            <label for="sabado_sim">Sim</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="sabado_nao" name="sabado" value="não">
+                            <label for="sabado_nao">Não</label>
+                        </div>
+                    </div>
+                </div>
+<br>     
+
+                <!-- Campo para CLT -->
+                <div class="camposSelecione">
+                    <label>Você aceita trabalhar:</label>
+                    <div class="opcoesClt">
+                        <div>
+                            <input type="radio" id="clt_mei" name="clt" value="mei">
+                            <label for="clt_mei">MEI</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="clt_clt" name="clt" value="clt">
+                            <label for="clt_clt">CLT</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="clt_ambos" name="clt" value="ambos">
+                            <label for="clt_ambos">Ambos (MEI ou CLT)</label>
+                        </div>
+                    </div>
+                </div>
+<br>
+
                 <!-- Campo para cursos -->
                 <div class="campos">
-                    <label for="cursos">Cursos ou certificações na área:</label>
+                    <label for="cursos">Cursos ou certificações na área (Opcional):</label>
                     <textarea id="cursos" name="cursos" rows="4"></textarea>
                 </div>
                 
                 <!-- Campo para feramentas e maquinas -->
                 <div class="campos">
-                    <label for="feramentas">Quais são as principais ferramentas e maquinas que você tem experiência:</label>
+                    <label for="feramentas">Quais são as principais ferramentas e maquinas que você tem experiência (Opcional):</label>
                     <textarea id="cursos" name="feramentas" rows="4"></textarea>
                 </div>
                 <!-- Campo para uma mensagem adicional -->
                 <div class="campos">
-                    <label for="mensagem">Mensagem:</label>
+                    <label for="mensagem">Mensagem (Opcional):</label>
                     <textarea id="mensagem" name="mensagem" rows="4"></textarea>
                 </div>
 

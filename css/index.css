@@ -60,6 +60,7 @@ form {
 
 .camposSelecione{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 15px;
     max-width: 100%;
