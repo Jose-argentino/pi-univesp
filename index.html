@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabalhe Conosco</title>
+    <title>Inicio</title>
     <link rel="stylesheet" href="css/geral.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
@@ -15,214 +15,49 @@
         </header>
         
         <main>
-            <header>
-                <h2 id="headerTitulo">Trabalhe Conosco</h1>
-                <p id="headerMensagem">Preencha o formulário abaixo.</p>
+            <header id="tituloPagina">
+                <h2 id="headerTitulo">Paisagismo & Gestão ambiental</h2>
             </header>
 
-            <!-- Formulário para envio de informações -->
-            <form action="enviar.php" method="post">
-                
-                <!-- Campo para o nome completo -->
-                <div class="campos">
-                    <label for="nome">Nome Completo:</label>
-                    <input type="text" id="nome" name="nome" required>
-                </div>
+            <p class="texto">
+                O paisagismo é a arte de planejar, projetar e organizar espaços externos, utilizando elementos naturais e construídos com o objetivo de criar ambientes harmônicos, funcionais e esteticamente agradáveis. Essa prática envolve o uso consciente de plantas, pedras, caminhos, espelhos d’água, mobiliário urbano, entre outros componentes, valorizando o espaço e promovendo o bem-estar dos usuários.
+            </p>
+            
+            <div class="imagem">
+                <img src="img/fotos/imagem001.jpg" alt="" class="destaque">
+            </div>
 
-                <!-- Campo para o telefone -->
-                <div class="campos">
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone">
-                </div>
+            <p class="texto">
+                A importância do paisagismo vai além da estética; ele contribui significativamente para a qualidade de vida nos ambientes urbanos e rurais. Um projeto paisagístico bem executado promove conforto ambiental, controle térmico, melhoria na qualidade do ar, redução da poluição sonora e visual, além de favorecer a convivência social e o contato com a natureza.
+            </p>
+            
+            <div class="imagem">
+                <img src="img/fotos/imagem002.jpg" alt="" class="destaque">
+            </div>
 
-                <!-- Campo para o cidade -->
-                <div class="campos">
-                    <label for="cidade">Cidade:</label>
-                    <input type="text" id="cidade" name="cidade" required>
-                </div>
+            <p class="texto">
+                A relação entre saúde e meio ambiente é direta e essencial para o bem-estar humano. Ambientes saudáveis, com ar puro, áreas verdes e boa qualidade da água e do solo, favorecem a prevenção de doenças e a promoção da saúde física e mental. O cuidado com o meio ambiente é, portanto, uma ação preventiva que impacta positivamente a saúde coletiva e o equilíbrio ecológico.
+            </p>
 
-                <!-- Campo para o bairo -->
-                <div class="campos">
-                    <label for="bairro">Bairro:</label>
-                    <input type="text" id="bairro" name="bairro" required>
-                </div>
+            <div class="imagem">
+                <img src="img/fotos/imagem007.jpg" alt="" class="destaque">
+            </div>
 
-                <!-- Campo para o data de nascimento -->
-                <div class="campos">
-                    <label for="nascimento">Data de Nascimento:</label>
-                    <input type="date" id="nascimento" name="nascimento" required>
-                </div>
-                
-                <!-- Campo para total de esperiencia -->
-                <div class="campos">
-                    <label for="experiencia">Tempo de experiência em anos:</label>
-                    <input type="number" id="experiencia" name="experiencia" min="0" step="1" required>
-                </div>        
+            <h3 id="tituloGaleria">Veja alguns de nossos trabalhos!</h3>
 
-                <!-- Campo para CNH -->
-                <div class="camposSelecione">
-                    <label>Possui carteira de motorista?</label>
-                    <div class="opcoes-cnh">
-                        <input type="radio" id="cnh_nao" name="cnh" value="nao" required>
-                        <label for="cnh_nao">Não</label>
-                
-                        <input type="radio" id="cnh_a" name="cnh" value="a" required>
-                        <label for="cnh_a">A</label>
-                
-                        <input type="radio" id="cnh_ab" name="cnh" value="ab" required>
-                        <label for="cnh_ab">AB</label>
-                
-                        <input type="radio" id="cnh_c" name="cnh" value="c" required>
-                        <label for="cnh_c">C</label>
-                
-                        <input type="radio" id="cnh_d" name="cnh" value="d" required>
-                        <label for="cnh_d">D</label>
-                
-                        <input type="radio" id="cnh_e" name="cnh" value="e" required>
-                        <label for="cnh_e">E</label>
-                    </div>
-                </div>
-<br>
-                <!-- Campo para habilidades -->
-                <div class="camposSelecione">
-                    <label>Selecione suas habilidades:</label>
-                    <div class="opcoesHabilidades">
-                        <div>
-                            <input type="checkbox" id="podas" name="habilidades[]" value="podas">
-                            <label for="podas">Podas e manejo de plantas</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="irrigacao" name="habilidades[]" value="irrigacao">
-                            <label for="irrigacao">Irrigação e manejo do solo</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="fertilizacao" name="habilidades[]" value="fertilizacao">
-                            <label for="fertilizacao">Adubação e fertilização</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="controle-pragas" name="habilidades[]" value="controle-pragas">
-                            <label for="controle-pragas">Controle de pragas</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="design-jardins" name="habilidades[]" value="design-jardins">
-                            <label for="design-jardins">Design e planejamento de jardins</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="uso-ferramentas" name="habilidades[]" value="uso-ferramentas">
-                            <label for="uso-ferramentas">Uso de ferramentas e equipamentos</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="plantio-nativo" name="habilidades[]" value="plantio-nativo">
-                            <label for="plantio-nativo">Plantio de espécies nativas</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="reflorestamento" name="habilidades[]" value="reflorestamento">
-                            <label for="reflorestamento">Reflorestamento e recuperação ambiental</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="solo-ecossistema" name="habilidades[]" value="solo-ecossistema">
-                            <label for="solo-ecossistema">Manejo de solo e ecossistemas</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="harmonizacao" name="habilidades[]" value="harmonizacao">
-                            <label for="harmonizacao">Harmonização de espaços verdes</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="seguranca" name="habilidades[]" value="seguranca">
-                            <label for="seguranca">Segurança no trabalho</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="projetos-ambientais" name="habilidades[]" value="projetos-ambientais">
-                            <label for="projetos-ambientais">Elaboração de projetos ambientais</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="educacao-ambiental" name="habilidades[]" value="educacao-ambiental">
-                            <label for="educacao-ambiental">Educação e conscientização ambiental</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="gestao-ambiental" name="habilidades[]" value="gestao-ambiental">
-                            <label for="gestao-ambiental">Gestão de áreas verdes</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="uso-sustentavel" name="habilidades[]" value="uso-sustentavel">
-                            <label for="uso-sustentavel">Uso sustentável de recursos</label>
-                        </div>
-                    </div>
-                </div>
-<br>                
-                <!-- Campo para horas extras -->
-                <div class="camposSelecione">
-                    <label>Você aceita fazer horas extras:</label>
-                    <div class="opcoesHoras">
-                        <div>
-                            <input type="radio" id="horas_sim" name="horas" value="sim">
-                            <label for="horas_sim">Sim</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="horas_nao" name="horas" value="não">
-                            <label for="horas_nao">Não</label>
-                        </div>
-                    </div>
-                </div>
-<br>                
-
-                <!-- Campo para sábado -->
-                <div class="camposSelecione">
-                    <label>Você aceita trabalhar de sábado:</label>
-                    <div class="opcoesSabado">
-                        <div>
-                            <input type="radio" id="sabado_sim" name="sabado" value="sim">
-                            <label for="sabado_sim">Sim</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="sabado_nao" name="sabado" value="não">
-                            <label for="sabado_nao">Não</label>
-                        </div>
-                    </div>
-                </div>
-<br>     
-
-                <!-- Campo para CLT -->
-                <div class="camposSelecione">
-                    <label>Você aceita trabalhar:</label>
-                    <div class="opcoesClt">
-                        <div>
-                            <input type="radio" id="clt_mei" name="clt" value="mei">
-                            <label for="clt_mei">MEI</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="clt_clt" name="clt" value="clt">
-                            <label for="clt_clt">CLT</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="clt_ambos" name="clt" value="ambos">
-                            <label for="clt_ambos">Ambos (MEI ou CLT)</label>
-                        </div>
-                    </div>
-                </div>
-<br>
-
-                <!-- Campo para cursos -->
-                <div class="campos">
-                    <label for="cursos">Cursos ou certificações na área (Opcional):</label>
-                    <textarea id="cursos" name="cursos" rows="4"></textarea>
-                </div>
-                
-                <!-- Campo para feramentas e maquinas -->
-                <div class="campos">
-                    <label for="feramentas">Quais são as principais ferramentas e maquinas que você tem experiência (Opcional):</label>
-                    <textarea id="cursos" name="feramentas" rows="4"></textarea>
-                </div>
-                <!-- Campo para uma mensagem adicional -->
-                <div class="campos">
-                    <label for="mensagem">Mensagem (Opcional):</label>
-                    <textarea id="mensagem" name="mensagem" rows="4"></textarea>
-                </div>
-
-                <!-- Botão de envio -->
-                <button type="submit">Enviar</button>
-
-            </form>
+            <div id="galeria">
+                <img src="img/fotos/imagem005.jpg" alt="" class="trabalhos">
+                <img src="img/fotos/imagem006.jpg" alt="" class="trabalhos">
+                <img src="img/fotos/imagem008.jpg" alt="" class="trabalhos">
+                <img src="img/fotos/imagem001.jpg" alt="" class="trabalhos">
+                <img src="img/fotos/imagem002.jpg" alt="" class="trabalhos">
+                <img src="img/fotos/imagem003.jpg" alt="" class="trabalhos">
+                <img src="img/fotos/imagem005.jpg" alt="" class="trabalhos">
+                <img src="img/fotos/imagem006.jpg" alt="" class="trabalhos">
+                <img src="img/fotos/imagem008.jpg" alt="" class="trabalhos">
+                <img src="img/fotos/imagem005.jpg" alt="" class="trabalhos">
+            </div>
+            
         </main>
         
         <footer>
