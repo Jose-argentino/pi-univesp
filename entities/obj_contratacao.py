@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import DeclarativeBase
+from entities.base import Base
 
-class Contratacao(DeclarativeBase):
+class Contratacao(Base):
+    __tablename__ = "contratacao"
+
     id_contrato = Column(Integer, primary_key=True)
     tipo_contrato = Column(String(45), nullable=False)

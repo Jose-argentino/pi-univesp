@@ -1,9 +1,10 @@
-
-from obj_contratacao import Contratacao
+from entities.obj_contratacao import Contratacao
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime, Boolean
-from sqlalchemy.orm import DeclarativeBase
+from entities.base import Base
+from sqlalchemy.orm import relationship
+class Candidato(Base):
+    __tablename__ = "candidato"
 
-class Candidato(DeclarativeBase):
     id_candidato = Column(Integer, primary_key=True)
     p_nome = Column(String(45), nullable=False)
     sobrenome = Column(String(45), nullable=False)
@@ -17,3 +18,6 @@ class Candidato(DeclarativeBase):
     trab_sabado = Column(Boolean, nullable=True)
     viagem_trab = Column(Boolean, nullable=True)
     id_contr = Column(Integer(), ForeignKey(Contratacao.id_contrato))
+
+
+

@@ -1,6 +1,8 @@
 from sqlalchemy import Column, Integer, String
-from sqlalchemy.orm import DeclarativeBase
+from entities.base import Base
 
-class Habilidade(DeclarativeBase):
+class Habilidade(Base):
+    __tablename__= "habilidade"
+
     id_hab = Column(Integer, primary_key=True)
     hab_nome = Column(String(200), nullable=False)
