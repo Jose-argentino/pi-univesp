@@ -9,8 +9,9 @@ mydb.close()
 
 #Reabre conexao ja com o banco de dados criado
 mydb = mysql.connector.connect(host=config.DB_HOST, user=config.DB_USER, password=config.DB_PWD, database=config.DB_NAME)
-schema = open('sql/schema.sql', 'r')
-values = open('sql/init_values.sql', 'r', encoding="utf8")
+schema = open('sql/schema.sql', 'r') #Criação banco de dados
+values = open('sql/init_values.sql', 'r', encoding="utf8") #Valores que precisam estar no banco para seleção
+exemplo = open('sql/mock.sql', 'r', encoding="utf8") #valores colocando apenas como exemplo
 
 with mydb.cursor() as cursor:
     cursor.execute(schema.read(), multi=True)
@@ -19,10 +20,14 @@ with mydb.cursor() as cursor:
     cursor.execute(values.read(), multi=True)
     while mydb.next_result():
         continue
+    cursor.execute(exemplo.read(), multi=True)
+    while mydb.next_result():
+        continue
 
 mydb.commit()
 mydb.close()
 
 schema.close()
 values.close()
+exemplo.close()
 
