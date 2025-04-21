@@ -1,0 +1,5 @@
+DB_USER = "root"
+DB_PWD = "LAriGn12"
+DB_HOST = "localhost"
+DB_PORT = "3306"
+DB_NAME = "bd_jardineiros"
