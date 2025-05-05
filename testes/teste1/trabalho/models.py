@@ -1,0 +1,2 @@
+from trabalho import db
+
