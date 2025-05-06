@@ -1,0 +1,73 @@
+body{
+    background-color: var(--background-color-1);
+}
+
+#container{
+    background-color: var(--background-color-5);
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+#tituloPagina{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+#headerTitulo{
+    color:var(--cor-fonte-2);
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+#headerMensagem{
+    color: var(--cor-fonte-5);
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    max-width: 100%;
+    border-collapse: collapse; 
+    white-space: pre-wrap;   
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+thead{
+    color: var(--cor-fonte-5);
+    text-transform: uppercase;
+}
+
+th, td {
+    border: var(--cor-borda) solid var(--espessura-da-borda);
+    padding: 10px;
+    text-align: left;
+    color: var(--cor-fonte-5);
+}
+
+th {
+    background-color: var(--background-color-5);
+    text-align: center;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 0 0;
+    color: var(--cor-fonte-5);
+}

@@ -1,0 +1,72 @@
+body{
+    background-color: var(--background-color-1);
+}
+
+#container{
+    background-color: var(--background-color-5);
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+}
+
+#tituloPagina{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#headerTitulo{
+    color:var(--cor-fonte-2);
+    font-size: 3.5rem;
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+
+#listaServicos {
+    padding: 20px;
+}
+
+#listaServicos ul {
+    list-style: none;
+    padding: 0;
+}
+
+#listaServicos li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    background-color: var(--background-color-1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.imgServico{
+    width: 100px;
+    height: 65px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.conteudo-servico h3 {
+    margin: 0 0 5px;
+    color: var(--cor-fonte-3);
+    font-size: 1.3rem;
+}
+
+.conteudo-servico p {
+    margin: 0;
+    color: var(--cor-fonte-1);
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 10px 0 0 0;
+    color: var(--cor-fonte-5);
+}

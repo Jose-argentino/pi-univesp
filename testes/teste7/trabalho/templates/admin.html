@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhe Conosco</title>
+    <link rel="stylesheet" href="../static/css/geral.css">
+    <link rel="stylesheet" href="../static/css/admin.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <!-- vai vim a bara de navegação -->
+            <div class="navbar">
+        
+                <div id="primeiro">
+        
+                    <div id="navbarLogo">
+                        <img src="img/logo.png" alt="Logo da empresa">
+                    </div>
+        
+                    <div id="nomeFrase">
+                        <h1>Nome da empresa</h1>
+                        <h3> Jardinagem, Paisagismo, Consultoria Ambiental, Treinamento e Gestão de Áreas Verdes.</h3>
+                    </div>
+        
+                </div>
+        
+                <div id="segundo">
+        
+                    <a href="{{url_for('indexpage')}}"><button class="navbarButton">Início</button></a>
+                    <a href="{{url_for('sobrepage')}}"><button class="navbarButton">Sobre</button></a>
+                    <a href="{{url_for('servicopage')}}"><button class="navbarButton">Serviços</button></a>
+                    <a href="{{url_for('contatopage')}}"><button class="navbarButton">Contato</button></a>
+                    <a href="{{url_for('trabalhepage')}}"><button class="navbarButton">trabalhe Conosco</button></a>
+                    <a href="{{url_for('adminpage')}}"><button class="navbarButton">Administrador</button></a>
+        
+                </div>
+            </div>
+        </header>
+        
+        <main>
+            <header id="tituloPagina">
+                <h2 id="headerTitulo">Cadastro do Trabalhe Conosco</h2>
+                <p id="headerMensagem">Segue abaixo lista dos colaboradores cadastrados</p>
+                <p>{{context.usuario}}</p>
+                <p>{{context.idade}}</p>
+            </header>
+
+            <!-- Informação vindas do DB -->
+            <table border="1">
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Cidade</th>
+                    <th>Bairro</th>
+                    <th>Nascimento</th>
+                    <th>Experiência</th>
+                    <th>CNH</th>
+                    <th>Viajar</th>
+                    <th>Horas Extras</th>
+                    <th>Sábado</th>
+                    <th>CLT</th>
+                    <th>Habilidades</th>
+                    <th>Cursos</th>
+                    <th>Ferramentas</th>
+                    <th>Mensagem</th>
+                </tr>
+                {% for c in candidatos %}
+                <tr>
+                    <td>{{ c.nome }}</td>
+                    <td>{{ c.telefone }}</td>
+                    <td>{{ c.cidade }}</td>
+                    <td>{{ c.bairro }}</td>
+                    <td>{{ c.nascimento }}</td>
+                    <td>{{ c.experiencia }}</td>
+                    <td>{{ c.cnh }}</td>
+                    <td>{{ c.viajar }}</td>
+                    <td>{{ c.horas }}</td>
+                    <td>{{ c.sabado }}</td>
+                    <td>{{ c.clt }}</td>
+                    <td>{{ c.habilidades }}</td>
+                    <td>{{ c.cursos }}</td>
+                    <td>{{ c.ferramentas }}</td>
+                    <td>{{ c.mensagem }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        
+            <a href="{{ url_for('indexpage') }}">Voltar</a>
+        
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>

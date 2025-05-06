@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Candidatos</title>
+</head>
+<body>
+    <h1>Candidatos Cadastrados</h1>
+
+    <table border="1">
+        <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Cidade</th>
+            <th>Bairro</th>
+            <th>Nascimento</th>
+            <th>Experiência</th>
+            <th>CNH</th>
+            <th>Viajar</th>
+            <th>Horas Extras</th>
+            <th>Sábado</th>
+            <th>CLT</th>
+            <th>Habilidades</th>
+            <th>Cursos</th>
+            <th>Ferramentas</th>
+            <th>Mensagem</th>
+        </tr>
+        {% for c in candidatos %}
+        <tr>
+            <td>{{ c.nome }}</td>
+            <td>{{ c.telefone }}</td>
+            <td>{{ c.cidade }}</td>
+            <td>{{ c.bairro }}</td>
+            <td>{{ c.nascimento }}</td>
+            <td>{{ c.experiencia }}</td>
+            <td>{{ c.cnh }}</td>
+            <td>{{ c.viajar }}</td>
+            <td>{{ c.horas }}</td>
+            <td>{{ c.sabado }}</td>
+            <td>{{ c.clt }}</td>
+            <td>{{ c.habilidades }}</td>
+            <td>{{ c.cursos }}</td>
+            <td>{{ c.ferramentas }}</td>
+            <td>{{ c.mensagem }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{{ url_for('indexpage') }}">Voltar</a>
+</body>
+</html>

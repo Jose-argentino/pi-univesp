@@ -1,0 +1,49 @@
+/* importou a fonte roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --cor-fonte-1: #593e2e;
+    --cor-fonte-2: #feffff ;
+    --cor-fonte-3: #025930;
+    --cor-finte-4: #91bf4b;
+    --cor-fonte-5: #014023;
+    
+    --background-color-1:#feffff;
+    --background-color-2:#593e2e;
+    --background-color-3:#025930;
+    --background-color-4:#014023;
+    --background-color-5:#91bf4b;
+    
+    
+    --espessura-da-borda: 2px;
+    --cor-borda: #593e2e;
+    --radius:20px;
+}
+
+body{
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+}
+
+#container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 600px){
+    #container{
+        width: 100vh;
+        /* height: 100vh; */
+        padding: 0;
+    }
+}
