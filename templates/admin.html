@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhe Conosco</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/geral.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+</head>
+
+<body>
+<div id="container">
+    <header>
+        <!-- vai vim a bara de navegação -->
+    </header>
+
+    <main>
+        <header id="tituloPagina">
+            <h2 id="headerTitulo">Cadastro do Trabalhe Conosco</h2>
+            <p id="headerMensagem">Segue abaixo lista dos prestadores de serviço cadastrados</p>
+        </header>
+
+        <!-- Informação vindas do DB -->
+        <table>
+            <thead>
+            <tr>
+                <th>Nome Completo</th>
+                <th>Telefone</th>
+                <th>Cidade</th>
+                <!--                        <th>Bairro</th>-->
+                <!--                        <th>Nasc.</th>-->
+                <th>Experiência</th>
+                <!--                        <th>CNH</th>-->
+                <!--                        <th>Habilidades</th>-->
+                <th>H.Extra</th>
+                <!--                        <th>Sabado</th>-->
+                <th>Contrato</th>
+                <th>Cursos</th>
+                <!--                        <th>Ferramentas</th>-->
+                <!--                        <th>Mensagem</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            {%for candidato in cadastrobasico %}
+            <tr>
+                <td>{{candidato[0].p_nome+' '+candidato[0].sobrenome}}</td>
+                <td>{{candidato[0].telefone}}</td>
+                <td>{{candidato[0].cidade}}</td>
+                <td>{{candidato[0].exp_anos}} anos</td>
+                <td>{{'Sim' if candidato[0].hora_extra else 'Não'}}</td>
+                <td>{{candidato[1].tipo_contrato}}</td>
+                <td>{{candidato[2].certificacao}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+    </footer>
+</div>
+</body>
+</html>

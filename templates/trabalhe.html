@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabalhe Conosco</title>
-    <link rel="stylesheet" href="css/geral.css">
-    <link rel="stylesheet" href="css/trabalhe.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/geral.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/trabalhe.css') }}">
+
 </head>
 
 <body>
@@ -55,7 +56,7 @@
                 
                 <!-- Campo Tempo de experiencia -->
                 <div class="campos">
-                    <label for="experiencia">Em que ano vocẽ comesou a trabalhar com jardinagem:</label>
+                    <label for="experiencia">Em que ano você começou a trabalhar com jardinagem?</label>
                     <input type="date" id="experiencia" name="experiencia" min="0" step="1" required>
                 </div>        
 
@@ -164,7 +165,7 @@
 <br>                
                 <!-- Campo para horas extras -->
                 <div class="camposSelecione">
-                    <label>Você aceita fazer horas extras:</label>
+                    <label>Você aceita fazer horas extras?</label>
                     <div class="opcoesHoras">
                         <div>
                             <input type="radio" id="horas_sim" name="horas" value="sim">
@@ -180,7 +181,7 @@
 
                 <!-- Campo para sábado -->
                 <div class="camposSelecione">
-                    <label>Você aceita trabalhar de sábado:</label>
+                    <label>Você aceita trabalhar aos sábado?</label>
                     <div class="opcoesSabado">
                         <div>
                             <input type="radio" id="sabado_sim" name="sabado" value="sim">
@@ -196,7 +197,7 @@
 
                 <!-- Campo para CLT -->
                 <div class="camposSelecione">
-                    <label>Você aceita trabalhar:</label>
+                    <label>Você aceita ser contratado como:</label>
                     <div class="opcoesClt">
                         <div>
                             <input type="radio" id="clt_mei" name="clt" value="mei">
@@ -222,7 +223,7 @@
                 
                 <!-- Campo para feramentas e maquinas -->
                 <div class="campos">
-                    <label for="feramentas">Quais são as principais ferramentas e maquinas que você tem experiência (Opcional):</label>
+                    <label for="feramentas">Quais são as principais ferramentas e máquinas que você tem experiência (Opcional):</label>
                     <textarea id="cursos" name="feramentas" rows="4"></textarea>
                 </div>
                 <!-- Campo para uma mensagem adicional -->
