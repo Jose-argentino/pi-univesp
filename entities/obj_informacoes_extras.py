@@ -12,3 +12,4 @@ class InformacoesExtras(Base):
     exp_ferramentas = Column(String(200), nullable=True)
     mensagem = Column(String(200), nullable=True)
 
+    candidato = relationship('Candidato', backref='candidato', foreign_keys=[id_cand])

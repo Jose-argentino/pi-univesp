@@ -19,5 +19,7 @@ class Candidato(Base):
     viagem_trab = Column(Boolean, nullable=True)
     id_contr = Column(Integer(), ForeignKey(Contratacao.id_contrato))
 
+    #hab_candidato = relationship('HabilidadesCandidato', backref='candidato')
+
 
 

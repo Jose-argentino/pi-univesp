@@ -22,7 +22,8 @@
             </header>
 
             <!-- Formulário para envio de informações -->
-            <form action="enviar.php" method="post">
+<!--            <form action="enviar.php" method="post">-->
+            <form method="post">
                 
                 <!-- Campo para o nome completo -->
                 <div class="campos">
@@ -56,8 +57,8 @@
                 
                 <!-- Campo Tempo de experiencia -->
                 <div class="campos">
-                    <label for="experiencia">Em que ano você começou a trabalhar com jardinagem?</label>
-                    <input type="date" id="experiencia" name="experiencia" min="0" step="1" required>
+                    <label for="experiencia">Há quanto tempo você trabalha com jardineiro?</label>
+                    <input type="number" id="experiencia" name="experiencia" min="0" step="1" required>
                 </div>        
 
                 <!-- Campo para CNH -->
@@ -200,15 +201,15 @@
                     <label>Você aceita ser contratado como:</label>
                     <div class="opcoesClt">
                         <div>
-                            <input type="radio" id="clt_mei" name="clt" value="mei">
+                            <input type="radio" id="clt_mei" name="clt" value=2>
                             <label for="clt_mei">MEI</label>
                         </div>
                         <div>
-                            <input type="radio" id="clt_clt" name="clt" value="clt">
+                            <input type="radio" id="clt_clt" name="clt" value=1>
                             <label for="clt_clt">CLT</label>
                         </div>
                         <div>
-                            <input type="radio" id="clt_ambos" name="clt" value="ambos">
+                            <input type="radio" id="clt_ambos" name="clt" value=3>
                             <label for="clt_ambos">Ambos (MEI ou CLT)</label>
                         </div>
                     </div>
@@ -223,8 +224,8 @@
                 
                 <!-- Campo para feramentas e maquinas -->
                 <div class="campos">
-                    <label for="feramentas">Quais são as principais ferramentas e máquinas que você tem experiência (Opcional):</label>
-                    <textarea id="cursos" name="feramentas" rows="4"></textarea>
+                    <label for="ferramentas">Quais são as principais ferramentas e máquinas que você tem experiência (Opcional):</label>
+                    <textarea id="cursos" name="ferramentas" rows="4"></textarea>
                 </div>
                 <!-- Campo para uma mensagem adicional -->
                 <div class="campos">
