@@ -15,16 +15,28 @@ db = SQLAlchemy(app)
 
 @app.route('/prestadores')
 def cadastrados():
-    # Select que retorna algumas informações mais relevantes sobre o candidato
+    # Select que retorna algumas informações mais relevantes sobre todos os candidatos
     result1 = db.session.query(Candidato, Contratacao, InformacoesExtras).join(Contratacao).join(
-        InformacoesExtras).all()
-
-    # Select que retorna o nome do candidato e as suas habilidades
-    # result2 = db.session.query(HabilidadesCandidato, Candidato, Habilidade).join(Candidato).join(Habilidade).all()
-    # for i in result2:
-    # print(i[1].p_nome, i[2].hab_nome)
+        InformacoesExtras).order_by(Candidato.id_candidato).all()
 
     return render_template('admin.html', cadastrobasico=result1)
+
+
+@app.route('/<int:id_candidato>')
+def detalhes_cadastrados(id_candidato):
+    result1 = (db.session.query(Candidato, Contratacao, InformacoesExtras)
+               .join(Contratacao, Contratacao.id_contrato == Candidato.id_contr)
+               .join(InformacoesExtras, InformacoesExtras.id_cand == Candidato.id_candidato)
+               .filter(Candidato.id_candidato == id_candidato).first())
+
+    result2 = (db.session.query(Habilidade.hab_nome, HabilidadesCandidato, Candidato)
+                .join(Candidato, Candidato.id_candidato == HabilidadesCandidato.id_candidato)
+                .join(Habilidade, Habilidade.id_hab == HabilidadesCandidato.id_hab)
+                .filter(Candidato.id_candidato == id_candidato).all())
+
+    listaHabilidade = list(map(lambda tupla: tupla[0], result2))
+
+    return render_template('detalhes.html', result=result1, result_hab=listaHabilidade)
 
 
 @app.route('/')
@@ -36,8 +48,7 @@ def servico():
 def cadastro():
     if request.method == 'POST':
         novo_candidato = Candidato(
-            p_nome=request.form['nome'],
-            sobrenome='',
+            nome=request.form['nome'],
             bairro=request.form['bairro'],
             cidade=request.form['cidade'],
             dt_nasc=request.form['nascimento'],
@@ -49,28 +60,27 @@ def cadastro():
             viagem_trab=request.form['viajar'] == 'sim',
             id_contr=request.form['clt']
         )
+        db.session.add(novo_candidato)
 
         cand_informacoes = InformacoesExtras(
-            candidato=novo_candidato,
+            candidato_rel=novo_candidato,
             certificacao=request.form['cursos'],
             exp_ferramentas=request.form['ferramentas'],
             mensagem=request.form['mensagem']
         )
-
-        cand_habilidades = HabilidadesCandidato(
-            candidato=novo_candidato,
-            id_hab=5
-        )
-
-        # if not title:
-        #     flash('O título é obrigatório!')
-        # else:
-
-        db.session.add(novo_candidato)
         db.session.add(cand_informacoes)
-        db.session.add(cand_habilidades)
+
+        habilidades = request.form.getlist('habilidades')
+        for habilidade in habilidades:
+            cand_habilidades = HabilidadesCandidato(
+                candidato_rel=novo_candidato,
+                id_hab=habilidade
+            )
+            db.session.add(cand_habilidades)
+
         db.session.commit()
-        # return redirect(url_for('index'))
+        return redirect(url_for('cadastrados'))
+
     return render_template('trabalhe.html')
 
 
