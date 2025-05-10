@@ -6,8 +6,7 @@ class Candidato(Base):
     __tablename__ = "candidato"
 
     id_candidato = Column(Integer, primary_key=True)
-    p_nome = Column(String(45), nullable=False)
-    sobrenome = Column(String(45), nullable=False)
+    nome = Column(String(200), nullable=False)
     bairro = Column(String(45), nullable=True)
     cidade = Column(String(45), nullable=False)
     dt_nasc = Column(DateTime, nullable=True)

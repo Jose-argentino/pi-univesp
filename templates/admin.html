@@ -43,7 +43,8 @@
             <tbody>
             {%for candidato in cadastrobasico %}
             <tr>
-                <td>{{candidato[0].p_nome+' '+candidato[0].sobrenome}}</td>
+                <td><a href="{{url_for('detalhes_cadastrados', id_candidato=candidato[0]['id_candidato'])}}"
+                >{{candidato[0]['nome']}}</a></td>
                 <td>{{candidato[0].telefone}}</td>
                 <td>{{candidato[0].cidade}}</td>
                 <td>{{candidato[0].exp_anos}} anos</td>

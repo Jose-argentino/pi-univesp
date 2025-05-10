@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/geral.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/contato.css') }}">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <!-- vai vim a bara de navegação -->
+        </header>
+
+        <main>
+            <header id="tituloPagina">
+                <h2 id="headerTitulo">Detalhes sobre o prestador</h2>
+            </header>
+
+            <p class="texto">
+                <span>Nome completo:</span> {{result[0].nome}}
+            </p>
+
+            <p class="texto">
+                <span>Bairro:</span> {{result[0].bairro}}
+            </p>
+
+            <p class="texto">
+                <span>Cidade:</span> {{result[0].cidade}}
+            </p>
+
+            <p class="texto">
+                <span>Data de nascimento:</span> {{result[0].dt_nasc}}
+            </p>
+
+            <p class="texto">
+                <span>Telefone</span> {{result[0].telefone}}
+            </p>
+
+            <p class="texto">
+                <span>Experiência:</span> {{result[0].exp_anos}} anos
+            </p>
+
+            <p class="texto">
+                <span>CNH:</span> {{result[0].cnh}}
+            </p>
+
+             <p class="texto">
+                <span>Hora extra:</span> {{'Sim' if result[0].hora_extra else 'Não'}}
+            </p>
+
+            <p class="texto">
+                <span>Trabalho aos sábados:</span> {{'Sim' if result[0].trab_sabado else 'Não'}}
+            </p>
+
+            <p class="texto">
+                <span>Viagem a trabalho:</span> {{'Sim' if result[0].viagem_trab else 'Não'}}
+            </p>
+
+            <p class="texto">
+                <span>Tipo de contrato:</span> {{result[1].tipo_contrato}}
+            </p>
+
+            <p class="texto">
+                <span>Habilidades:</span> {{', '.join(result_hab)}}
+            </p>
+
+            {% if result[2].certificacao != None %}
+            <p class="texto">
+                <span>Cursos:</span> {{result[2].certificacao}}
+            </p>
+            {% endif %}
+
+            {% if result[2].exp_ferramentas != None %}
+            <p class="texto">
+                <span>Ferramentas e máquinas:</span> {{result[2].exp_ferramentas}}
+            </p>
+            {% endif %}
+
+            {% if result[2].mensagem != None %}
+            <p class="texto">
+                <span>Mensagem:</span> {{result[2].mensagem}}
+            </p>
+            {% endif %}
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+</body>
+</html>
+
+<!--{%for candidato in cadastrobasico %}-->
+<!--            <tr>-->
+<!--                <td>{{candidato[0].nome}}</td>-->
+<!--                <td>{{candidato[0].telefone}}</td>-->
+<!--                <td>{{candidato[0].cidade}}</td>-->
+<!--                <td>{{candidato[0].exp_anos}} anos</td>-->
+<!--                <td>{{'Sim' if candidato[0].hora_extra else 'Não'}}</td>-->
+<!--                <td>{{candidato[1].tipo_contrato}}</td>-->
+<!--                <td>{{candidato[2].certificacao}}</td>-->
+<!--            </tr>-->
+<!--            {% endfor %}-->
+
+<!--def detalhes_cadastrados(id):-->
+<!--    result1 = db.session.query(Candidato, Contratacao, InformacoesExtras).join(Contratacao).join(-->
+<!--        InformacoesExtras)-->
+<!--    result2 = db.session.query(HabilidadesCandidato, Candidato, Habilidade).join(Candidato).join(Habilidade)-->
+
+<!--    return render_template('detalhes.html', detalhescadastro=result2)-->

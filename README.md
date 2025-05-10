@@ -7,7 +7,7 @@ Se o seu computador for windows, rode o comando no GitBash
  * Ativar o ambiente recém criado:
    * Se Linux: ```source env/bin/activate```;
    * Se Windows: ```source env/Scripts/activate```;
- * Em seguida, isntalar as seguintes dependências:
+ * Em seguida, instalar as seguintes dependências:
    * ```pip install flask```;
    * ```pip install sqlalchemy```;
    * ```pip install Flask-SQLAlchemy```;
