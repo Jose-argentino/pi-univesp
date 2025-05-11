@@ -1,33 +1,89 @@
-import config
-import mysql.connector #precisa instalar no terminal 'pip install mysql-connector-python'
+import mysql.connector
+import os
 
-#Faz primeira conexao para criar banco de dados caso este nao exista
-mydb = mysql.connector.connect(host=config.DB_HOST, user=config.DB_USER, password=config.DB_PWD) #mydb é o conector
-with mydb.cursor() as cursor:
-    cursor.execute(f'CREATE DATABASE IF NOT EXISTS {config.DB_NAME}')
-mydb.close()
+# Configuração da conexão para criar o banco
+config_base = {
+    'user': 'root',
+    'password': '123',  # Troque pela sua senha
+    'host': 'localhost'
+}
 
-#Reabre conexao ja com o banco de dados criado
-mydb = mysql.connector.connect(host=config.DB_HOST, user=config.DB_USER, password=config.DB_PWD, database=config.DB_NAME)
-schema = open('sql/schema.sql', 'r') #Criação banco de dados
-values = open('sql/init_values.sql', 'r', encoding="utf8") #Valores que precisam estar no banco para seleção
-exemplo = open('sql/mock.sql', 'r', encoding="utf8") #valores colocando apenas como exemplo
+# Configuração da conexão com o banco já criado
+config = {
+    'user': 'root',
+    'password': '123',
+    'host': 'localhost',
+    'database': 'pi_univesp',
+    'raise_on_warnings': True
+}
 
-with mydb.cursor() as cursor:
-    cursor.execute(schema.read(), multi=True)
-    while mydb.next_result():
-        continue
-    cursor.execute(values.read(), multi=True)
-    while mydb.next_result():
-        continue
-    cursor.execute(exemplo.read(), multi=True)
-    while mydb.next_result():
-        continue
+# Caminho base do projeto
+base_path = os.path.dirname(os.path.abspath(__file__))
 
-mydb.commit()
-mydb.close()
+try:
+    # Conecta sem banco para criar o banco
+    conn = mysql.connector.connect(**config_base)
+    cursor = conn.cursor()
+    try:
+        cursor.execute("CREATE DATABASE pi_univesp;")
+        print("Banco de dados 'pi_univesp' criado com sucesso.")
+    except mysql.connector.Error as err:
+        if err.errno == 1007:
+            print("Banco de dados 'pi_univesp' já existe. Continuando...")
+        else:
+            raise
+    finally:
+        cursor.close()
+        conn.close()
+except mysql.connector.Error as err:
+    print(f"Erro ao criar banco: {err}")
+    exit(1)
 
-schema.close()
-values.close()
-exemplo.close()
+try:
+    # Conecta ao banco já existente
+    conn = mysql.connector.connect(**config)
+    cursor = conn.cursor()
 
+    print("Executando: -- Desabilita verificação de chaves estrangeiras temporariamente")
+    cursor.execute("SET FOREIGN_KEY_CHECKS = 0;")
+
+    print("Executando: DROP TABLE IF EXISTS...")
+    cursor.execute("SHOW TABLES;")
+    tabelas = cursor.fetchall()
+    for (tabela,) in tabelas:
+        cursor.execute(f"DROP TABLE IF EXISTS {tabela};")
+
+    print("Executando: -- Reabilita verificação de chave estrangeira")
+    cursor.execute("SET FOREIGN_KEY_CHECKS = 1;")
+
+    print("Executando: -- Criação das tabelas")
+    with open(os.path.join(base_path, "sql/schema.sql"), 'r') as f:
+        schema_sql = f.read()
+
+    for statement in schema_sql.split(';'):
+        stmt = statement.strip()
+        if stmt:
+            cursor.execute(stmt + ';')
+
+    print("Executando: -- Inserção de dados de exemplo (se existir)")
+    dados_path = os.path.join(base_path, "sql/dados_exemplo.sql")
+    if os.path.exists(dados_path):
+        with open(dados_path, 'r') as f:
+            dados_sql = f.read()
+        for statement in dados_sql.split(';'):
+            stmt = statement.strip()
+            if stmt:
+                cursor.execute(stmt + ';')
+
+    conn.commit()
+    print("Banco de dados inicializado com sucesso.")
+
+except mysql.connector.Error as err:
+    print(f"Erro: {err}")
+    conn.rollback()
+
+finally:
+    if 'cursor' in locals() and cursor:
+        cursor.close()
+    if 'conn' in locals() and conn:
+        conn.close()

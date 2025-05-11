@@ -6,6 +6,7 @@
     <title>Trabalhe Conosco</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/geral.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/trabalhe.css') }}">
+    <link rel="stylesheet" href="../static/css/navbar.css">
 
 </head>
 
@@ -13,6 +14,31 @@
     <div id="container">
         <header>
             <!-- vai vim a bara de navegação -->
+                              <div class="navbar">
+        
+                    <div id="primeiro">
+
+                        <div id="navbarLogo">
+                            <img src="../static/img/logo.png" alt="Logo da empresa">
+                        </div>
+
+                        <div id="nomeFrase">
+                            <h1>Nome da empresa</h1>
+                            <h3> Jardinagem, Paisagismo, Consultoria Ambiental, Treinamento e Gestão de Áreas Verdes.</h3>
+                        </div>
+
+                    </div>
+
+                    <div id="segundo">
+
+                        <a href="{{url_for('index')}}"><button class="navbarButton">Início</button></a>
+                        <!-- <a href="#"><button class="navbarButton">Sobre</button></a> -->
+                        <!-- <a href="#"><button class="navbarButton">Serviços</button></a> -->
+                        <a href="{{url_for('servico')}}"><button class="navbarButton">Cadastrados</button></a>
+                        <!-- <a href="{{url_for('cadastro')}}"><button class="navbarButton">trabalhe Conosco</button></a> -->
+
+                    </div>
+                </div>
         </header>
         
         <main>

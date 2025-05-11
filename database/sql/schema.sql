@@ -1,8 +1,11 @@
-DROP TABLE IF EXISTS CONTRATACAO, CANDIDATO, HABILIDADE, HABILIDADES_CANDIDATO, INFORMACOES_EXTRAS CASCADE;
+-- Reabilita verificação de chave estrangeira (caso ainda esteja desabilitada)
+SET FOREIGN_KEY_CHECKS=1;
+
+-- Criação das tabelas
 
 CREATE TABLE CONTRATACAO (
-        id_contrato INTEGER PRIMARY KEY,
-        tipo_contrato VARCHAR(45) NOT NULL
+    id_contrato INTEGER PRIMARY KEY,
+    tipo_contrato VARCHAR(45) NOT NULL
 );
 
 CREATE TABLE CANDIDATO (
@@ -19,7 +22,7 @@ CREATE TABLE CANDIDATO (
     viagem_trab BOOLEAN,
     id_contr INTEGER,
     FOREIGN KEY (id_contr) REFERENCES CONTRATACAO(id_contrato)
-    );
+);
 
 CREATE TABLE HABILIDADE (
     id_hab INTEGER PRIMARY KEY,
@@ -42,4 +45,3 @@ CREATE TABLE INFORMACOES_EXTRAS (
     mensagem VARCHAR(200),
     FOREIGN KEY (id_cand) REFERENCES CANDIDATO(id_candidato)
 );
-

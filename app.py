@@ -40,8 +40,13 @@ def detalhes_cadastrados(id_candidato):
 
 
 @app.route('/')
+def index():
+    return render_template('index.html')
+
+
+@app.route('/servico')
 def servico():
-    return render_template('servico.html')
+    return render_template('contato.html')
 
 
 @app.route('/cadastro', methods=('GET', 'POST'))

@@ -4,14 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
-    <link rel="stylesheet" href="css/geral.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../static/css/geral.css">
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+
 </head>
 
 <body>
     <div id="container">
         <header>
             <!-- vai vim a bara de navegação -->
+                 <div class="navbar">
+        
+                    <div id="primeiro">
+
+                        <div id="navbarLogo">
+                            <img src="../static/img/logo.png" alt="Logo da empresa">
+                        </div>
+
+                        <div id="nomeFrase">
+                            <h1>Nome da empresa</h1>
+                            <h3> Jardinagem, Paisagismo, Consultoria Ambiental, Treinamento e Gestão de Áreas Verdes.</h3>
+                        </div>
+
+                    </div>
+
+                    <div id="segundo">
+
+                        <!-- <a href="#"><button class="navbarButton">Início</button></a> -->
+                        <!-- <a href="#"><button class="navbarButton">Sobre</button></a> -->
+                        <!-- <a href="#"><button class="navbarButton">Serviços</button></a> -->
+                        <a href="{{url_for('servico')}}"><button class="navbarButton">Cadastrados</button></a>
+                        <a href="{{url_for('cadastro')}}"><button class="navbarButton">trabalhe Conosco</button></a>
+
+                    </div>
+                </div>
         </header>
         
         <main>
@@ -24,7 +51,7 @@
             </p>
             
             <div class="imagem">
-                <img src="img/fotos/imagem001.jpg" alt="" class="destaque">
+                <img src="../static/img/fotos/imagem001.jpg" alt="" class="destaque">
             </div>
 
             <p class="texto">
@@ -32,7 +59,7 @@
             </p>
             
             <div class="imagem">
-                <img src="img/fotos/imagem002.jpg" alt="" class="destaque">
+                <img src="../static/img/fotos/imagem002.jpg" alt="" class="destaque">
             </div>
 
             <p class="texto">
@@ -40,22 +67,22 @@
             </p>
 
             <div class="imagem">
-                <img src="img/fotos/imagem007.jpg" alt="" class="destaque">
+                <img src="../static/img/fotos/imagem007.jpg" alt="" class="destaque">
             </div>
 
             <h3 id="tituloGaleria">Veja alguns de nossos trabalhos!</h3>
 
             <div id="galeria">
-                <img src="img/fotos/imagem005.jpg" alt="" class="trabalhos">
-                <img src="img/fotos/imagem006.jpg" alt="" class="trabalhos">
-                <img src="img/fotos/imagem008.jpg" alt="" class="trabalhos">
-                <img src="img/fotos/imagem001.jpg" alt="" class="trabalhos">
-                <img src="img/fotos/imagem002.jpg" alt="" class="trabalhos">
-                <img src="img/fotos/imagem003.jpg" alt="" class="trabalhos">
-                <img src="img/fotos/imagem005.jpg" alt="" class="trabalhos">
-                <img src="img/fotos/imagem006.jpg" alt="" class="trabalhos">
-                <img src="img/fotos/imagem008.jpg" alt="" class="trabalhos">
-                <img src="img/fotos/imagem005.jpg" alt="" class="trabalhos">
+                <img src="../static/img/fotos/imagem005.jpg" alt="" class="trabalhos">
+                <img src="../static/img/fotos/imagem006.jpg" alt="" class="trabalhos">
+                <img src="../static/img/fotos/imagem008.jpg" alt="" class="trabalhos">
+                <img src="../static/img/fotos/imagem001.jpg" alt="" class="trabalhos">
+                <img src="../static/img/fotos/imagem002.jpg" alt="" class="trabalhos">
+                <img src="../static/img/fotos/imagem003.jpg" alt="" class="trabalhos">
+                <img src="../static/img/fotos/imagem005.jpg" alt="" class="trabalhos">
+                <img src="../static/img/fotos/imagem006.jpg" alt="" class="trabalhos">
+                <img src="../static/img/fotos/imagem008.jpg" alt="" class="trabalhos">
+                <img src="../static/img/fotos/imagem005.jpg" alt="" class="trabalhos">
             </div>
             
         </main>

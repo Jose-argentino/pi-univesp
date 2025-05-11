@@ -1,5 +1,8 @@
 #!/bin/bash
 
-pip install mysql-connector-python
+echo "Instalando dependências no ambiente virtual..."
+pip install flask flask_sqlalchemy
 
-python init.db.py
+echo "Criando banco de dados..."
+python3 init.db.py
+

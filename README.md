@@ -20,6 +20,7 @@ Se o seu computador for windows, rode o comando no GitBash
  * Colocar a senha cadastrada no MySQL Workbench no arquivo **config.py** no campo _DB_PWD_;
  * Abrir o Workbench, se não estiver aberto;
  * Abrir a pasta raiz do projeto no terminal;
+ * para dar permissao ```chmod +x install_db.sh´´´
  * Acessar a pasta _database_ e executar o comando ```./install_db.sh``` para criar as 
 tabelas do banco e dos valores das tabelas de Contratação e Habilidade que são padrão. Será inserido também dados mockados;
  
