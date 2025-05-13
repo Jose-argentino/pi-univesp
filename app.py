@@ -43,9 +43,13 @@ def detalhes_cadastrados(id_candidato):
 def servico():
     return render_template('servico.html')
 
+@app.route('/administrador')
+def administrador():
+    return render_template('admin.html')
 
 @app.route('/cadastro', methods=('GET', 'POST'))
 def cadastro():
+    # cadastro = trabalhe.html
     if request.method == 'POST':
         novo_candidato = Candidato(
             nome=request.form['nome'],
