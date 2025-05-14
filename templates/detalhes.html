@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/geral.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/contato.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/detalhes.css') }}">
 </head>
 
 <body>
@@ -93,21 +93,3 @@
 </body>
 </html>
 
-<!--{%for candidato in cadastrobasico %}-->
-<!--            <tr>-->
-<!--                <td>{{candidato[0].nome}}</td>-->
-<!--                <td>{{candidato[0].telefone}}</td>-->
-<!--                <td>{{candidato[0].cidade}}</td>-->
-<!--                <td>{{candidato[0].exp_anos}} anos</td>-->
-<!--                <td>{{'Sim' if candidato[0].hora_extra else 'Não'}}</td>-->
-<!--                <td>{{candidato[1].tipo_contrato}}</td>-->
-<!--                <td>{{candidato[2].certificacao}}</td>-->
-<!--            </tr>-->
-<!--            {% endfor %}-->
-
-<!--def detalhes_cadastrados(id):-->
-<!--    result1 = db.session.query(Candidato, Contratacao, InformacoesExtras).join(Contratacao).join(-->
-<!--        InformacoesExtras)-->
-<!--    result2 = db.session.query(HabilidadesCandidato, Candidato, Habilidade).join(Candidato).join(Habilidade)-->
-
-<!--    return render_template('detalhes.html', detalhescadastro=result2)-->

@@ -13,13 +13,13 @@ app.config[
 db = SQLAlchemy(app)
 
 
-@app.route('/prestadores')
+@app.route('/cadastrados')
 def cadastrados():
     # Select que retorna algumas informações mais relevantes sobre todos os candidatos
     result1 = db.session.query(Candidato, Contratacao, InformacoesExtras).join(Contratacao).join(
         InformacoesExtras).order_by(Candidato.id_candidato).all()
 
-    return render_template('admin.html', cadastrobasico=result1)
+    return render_template('cadastrados.html', cadastrobasico=result1)
 
 
 @app.route('/<int:id_candidato>')
@@ -40,12 +40,9 @@ def detalhes_cadastrados(id_candidato):
 
 
 @app.route('/')
-def servico():
-    return render_template('servico.html')
+def index():
+    return render_template('index.html')
 
-@app.route('/administrador')
-def administrador():
-    return render_template('admin.html')
 
 @app.route('/cadastro', methods=('GET', 'POST'))
 def cadastro():
